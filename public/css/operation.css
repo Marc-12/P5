@@ -1,0 +1,132 @@
+	.boxOperation
+	{
+		border: solid re 4px;
+		height: 10%;
+		margin-bottom: 25px;
+		border: solid gree 3px ;
+	}
+/* CAMERA COLOR */
+.help .fa-video
+{
+	color: red;
+}
+/* BOX TOP */
+.boxTop
+{
+border: solid orang;
+height: 55%;
+display: flex;
+}
+.boxTopLeft
+{
+	border: solid blac 1px;
+	width: 20%;
+}	
+.boxTopLeftTop
+{
+	border: solid gree 1px;
+	height: 50%;
+	width: 100%
+}
+.boxTopLeftBottom
+{
+	border: solid gree 1px;
+	height: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.boxTopRight
+{
+	border: solid blac 1px;
+	width: 80%;
+}	
+
+			/*FONT SIZE FOR MOBILE AND DESKTOP*/
+			@media(max-width: 768px)
+			{
+				.boxTopRight p, .boxTopLeft p, .boxBottomLeft p
+				{
+					font-Size: 38px;
+				}
+				/* placeholder */
+				.boxOperation ::placeholder 
+				{
+					font-size: 20px;
+				}
+				.boxBottomRight input[type=text]
+				{
+					font-Size: 37px;
+				}
+			}
+			@media(min-width: 769px)
+			{
+				.boxTopRight p, .boxTopLeft p, .boxBottomLeft p
+				{
+					font-Size: 45px;
+				}
+				/* placeholder */
+				.boxOperation ::placeholder 
+				{
+					font-size: 20px;
+				}
+				.boxBottomRight input[type=text]
+				{
+					font-Size: 40px;
+					letter-spacing: 1px;
+				}
+				
+			}
+.boxTopRightTop
+{
+	border: solid gree 1px;
+	height: 50%;
+	width: 100%;
+}
+.boxTopRightBottom
+{
+	border: solid gree 1px;
+	height: 50%;
+	width: 100%;
+}
+/* BOX BOTTOM */
+.boxBottom
+{
+border: solid blu;
+height: 35%;
+display: flex;
+margin-bottom: 20px;
+}
+.boxBottomLeft
+{
+border: solid blac 1px;
+width: 20%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.boxBottomRight
+{
+width: 80%;
+height: 100%;
+display: flex;
+flex-direction: row; 
+border: solid re 2px;
+justify-content: flex-end;
+}
+.boxBottomRight input[type=text]
+{
+	padding: 0px;
+	margin: 0px;
+	text-align: right;
+	width: 100%;
+}
+/* placeholder */
+.boxOperation ::placeholder 
+{
+	font-style: italic;
+	text-align: center;
+	color: #C0C0C0;
+	margin: 0px;
+}

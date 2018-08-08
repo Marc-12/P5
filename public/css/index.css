@@ -1,0 +1,412 @@
+body 
+{
+	font-family: 'Tahoma';
+}
+#app-navbar-collapse
+{
+	padding-left: 6%;	
+}
+/*-----------------> Infos de la page index <----------------*/
+.IndexVideo
+{
+	text-align: center;
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	padding: 0px;
+}
+.fa-circle
+{
+	font-size: 12px;
+}
+#welcomePanel
+{
+	display: flex; 
+	flex-direction: row;
+	justify-content: space-around;
+}
+	#road
+	{
+		background-image: url(../images/svg/road.svg);
+		background-repeat: no-repeat;
+	}
+	#mountain
+	{
+		background-image: url(../images/svg/mountain.svg);
+		background-position: -250px -180px;
+	}
+	#apple
+	{
+		background-image: url(../images/svg/apple.svg);
+		background-position: -260px -180px;
+	}	
+.welcomePanel
+{
+	background-color:  #8585e0;
+	text-align: center;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 5px 22px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 5px 22px 1px rgba(0,0,0,0.75);
+	box-shadow: 0px 5px 22px 1px rgba(0,0,0,0.75);
+}
+#welcomePanel .fa-chalkboard-teacher, .fa-user-graduate, .fa-leanpub
+{
+	color: white;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-size: 48px;
+}
+.fa-user-graduate, .fa-leanpub
+{
+	color: white;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-size: 48px;
+}
+.welcomePanel h1
+{
+	text-align: justify;
+	color: white;
+	font-size: 26px;
+}
+.welcomePanel p
+{
+	text-align: justify;
+	color: white;
+	font-size: 18px;
+}
+
+@media(min-width: 1200px)
+{	
+	#road
+	{
+		background-position: -150px -35px;
+		background-size: 650px;
+	}
+	#mountain
+	{
+		background-position: -250px -180px;
+		background-size: 850px;
+	}
+	#apple
+	{
+		background-position: -260px -180px;
+		background-size: 850px;
+	}			
+	#slider-infos 
+	{
+		width: 70%;
+		height: 320px;
+		margin: -50% 0px 0px 15%;
+	}
+	
+	.IndexVideo iframe
+	{
+		height: 480px;
+		margin-top: 25px;
+		width: 60%;
+	}
+	.welcomePanel
+	{
+		width: 350px;
+		height: 560px;	
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		padding: 3% 3%;
+	}
+	#carrousel .fas
+	{
+		font-size: 4em;
+		top: 45%;
+	}
+}				
+@media(min-width: 991px) and (max-width: 1199px)
+{
+	#mountain
+	{
+		background-position: -290px -100px;
+		background-size: 900px;
+	}
+	#road
+	{
+		background-position: -150px -35px;
+		background-size: 650px;
+	}
+	#apple
+	{
+		background-position: -225px 10px;
+		background-size: 700px;
+	}
+	.welcomePanel
+	{
+		width: 270px;
+		height: 720px;	
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		padding: 3% 3%;
+	}
+	.IndexVideo iframe
+	{
+		height: 480px;
+		width: 90%;
+	}
+	#slider-infos 
+	{
+		width: 70%;
+		height: 320px;
+		margin: -55% 0px 0px 15%;
+	}
+	#carrousel .fas
+	{
+		font-size: 4em;
+		top: 45%;
+	}
+}		
+@media(min-width: 768px) and (max-width: 990px)
+{
+	#mountain
+	{
+		background-position: -250px -550px;
+		background-size: 1250px;
+	}
+	#road
+	{
+		background-position: -290px -655px;
+		background-size: 1500px;
+	}
+	#apple
+	{
+		background-position: 120px -380px;
+		background-size: 1000px;
+	}
+	.IndexVideo iframe
+	{
+		height: 480px;
+		width: 90%;
+	}
+	.welcomePanel
+	{
+		height: 510px;	
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		height: 500px;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		padding: 7% 7%;
+		background-position: -300px -600px;
+		background-size: 1400px;
+	}
+	#welcomePanel
+	{
+		display: flex; 
+		flex-direction: column;
+	}
+	#slider-infos 
+	{
+		width: 70%;
+		height: 320px;
+		margin: -55% 0px 0px 15%;
+	}
+	#carrousel .fas
+	{
+		font-size: 3em;
+		top: 40%;
+	}
+}			
+@media(min-width: 531px) and (max-width: 767px)
+{			
+	#mountain
+	{
+		background-position: -390px -550px;
+		background-size: 1250px;
+	}
+	#road
+	{
+		background-position: -290px -655px;
+		background-size: 1500px;
+	}
+	#apple
+	{
+		background-position: -220px -380px;
+		background-size: 1000px;
+	}	
+		#slider-infos 
+		{
+			width: 70%;
+			height: 320px;
+			margin: -65% 0px 0px 15%;
+		}
+			#slider-infos h1
+			{
+				font-size: 20px;
+			}
+			#slider-infos p
+			{
+				margin-bottom: 2%;
+				font-size: 18px;
+			}
+	#welcomePanel
+	{
+		display: flex; 
+		flex-direction: column;
+	}
+	.IndexVideo iframe
+	{
+		height: 480px;
+		width: 90%;
+	}
+	.welcomePanel
+	{
+		height: 510px;	
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		height: 500px;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		padding: 7% 7%;
+		background-position: -300px -600px;
+		background-size: 1400px;
+	}
+	#carrousel .fas
+	{
+		display: non;
+		font-size: 3em;
+		top: 40%;
+	}
+}	
+		@media(max-width: 530px)
+		{
+			#mountain
+			{
+				background-position: -390px -550px;
+				background-size: 1250px;
+			}
+			#road
+			{
+				background-position: -290px -370px;
+				background-size: 900px;
+			}
+			#apple
+			{
+				background-position: -320px -350px;
+				background-size: 1000px;
+			}		
+			#welcomePanel
+			{
+				display: flex; 
+				flex-direction: column;
+			}
+				#slider-infos 
+				{
+					width: 70%;
+					margin: 50% 0px 0px 15%;
+				}
+			.IndexVideo iframe
+			{
+				height: 480px;
+				width: 90%;
+			}
+			.welcomePanel
+			{
+				height: 600px;	
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 2%;
+				margin-bottom: 2%;
+				padding: 7% 7%;
+			}	
+			.welcomePanel p 
+			{
+				font-size: 16px;
+			}
+			#carrousel .fas
+			{
+				font-size: 2em;
+				top: 40%;
+			}
+		}
+/* ------------------> SLIDER <------------------*/
+#slider
+{
+	width: 100%;
+	height: 400px;
+	margin: 0px;
+	padding: 0px;
+    position: relative;
+	overflow: hidden;
+}
+#carrousel
+{
+	height: 100%;
+	width: 100%;
+    position: relative;
+    margin: 0px;
+	padding: 0px;
+}
+
+#carrousel img
+{
+	height: 100%;
+	margin: 0px;
+}
+
+#carrousel ul li
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+	margin: 0px;
+}
+#carrousel ul
+{
+	margin: 0px;
+	height: 100%; 
+	width: 100%;
+}
+#carrousel  .fas
+{
+	position: absolute;
+	color: white;
+	z-index: 15;
+	opacity: 0.7;
+}
+.fa-chevron-circle-left
+{
+	left: 0.5%;
+}
+.fa-chevron-circle-right
+{
+	right: 0.5%;
+}
+/*-----------------> Infos du SLIDER <----------------*/
+#slider-infos 
+{
+	z-index: 15;
+	position: absolute;
+	background-color: rgba(0, 0, 255, 0.3);
+	padding: 3%;
+	border-radius: 5px;
+}
+#slider-infos h1
+{
+	font-family: roboto-black, Arial;
+	font-size: 30px;
+	margin-bottom: 2%;
+	margin-top: 0px;
+	font-weight: 600;
+	color: #2e2eb8;
+}
+#slider-infos p
+{
+	color: white;
+	font-family: roboto, Arial;
+	margin-bottom: 2%;
+	font-size: 18px;
+}
