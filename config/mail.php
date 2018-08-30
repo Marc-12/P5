@@ -2,6 +2,13 @@
 
 return [
 
+	//LOCAL DEV
+	// 'to' => 
+		// [
+		// 'address' => 'lacplecis@gmail.com',
+		// 'name' => 'P5 DEVELOPMENT'
+		// ],
+
     /*
     |--------------------------------------------------------------------------
     | Mail Driver
@@ -55,8 +62,7 @@ return [
     |
     */
 
-    // 'from' => ['address' => null, 'name' => null],
-    'from' => ['address' => 'moi@free.fr', 'name' => 'administrateur'],
+    'from' => ['address' => null, 'name' => null],
 
     /*
     |--------------------------------------------------------------------------

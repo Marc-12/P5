@@ -1,18 +1,19 @@
 /* ------------------> PAGE MA CLASSE <------------------*/
+/*
 .maclasse
-{
-	position: relative;
-}
-#userSettingsIcon
 {
 	position: relativ;
 }
+*/
+/*
 #maClasseContent
 {
-	margin: 0px;
-	height: 100%;
-	width: 100%;
-}								
+	/*margin: 0px;*/
+	/*height: 100%;*/
+	/*width: 100%;
+}
+*/	
+					
 /* ICON display  */	
 #mesInformations 
 {
@@ -33,7 +34,7 @@
 	float: right;
 	margin-right: 0px;
 	color: black;
-	width:150px;
+	width: 150px;
 	-webkit-border-top-right-radius: 15px;
 	-webkit-border-bottom-right-radius: 15px;
 	-moz-border-radius-topright: 15px;
@@ -44,7 +45,7 @@
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
-	padding:2px;
+	padding: 2px;
 }
 .close
 {
@@ -65,7 +66,6 @@
 /* ICONES DU MENU */
  #userSettingsIcon
  {
-	 border: 1px solid re;
 	 margin: 0px;
 	 padding: 1%;
 	 width: 100%;
@@ -81,7 +81,6 @@
  }
  #userSettingsIcon a .menuIcon
  {
-	 border: 1px solid gre;
 	 color: #d9d9d9;
 	 font-size: 28px;
 	 margin-left: 25px;
@@ -89,7 +88,6 @@
  #userSettingsIcon .fa-video
  {
 	 color:  #ff9999;
-	 border: 1px solid gre;
 	 font-size: 28px;
 	 margin-left: 25px;
  }

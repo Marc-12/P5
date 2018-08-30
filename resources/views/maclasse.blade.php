@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('templates.app')
 @section('content')
     <div class="row">
         <div class="col-lg-12 maclasse">
@@ -10,49 +10,96 @@
 						<div class="alert alert-success" id="alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('form') !!}</em></div>
 					@endif
 					<div class="panel panel-default">
-						<div class="panel-heading"><h2 class="text-center">Je choisis mon travail</h2><p class="text-justify">Choisis dans la liste l'opération que tu veux travailler:</p></div>
-						<div class="panel-body">
+						<div class="panel-heading"><h2 class="text-center">Je choisis mon travail</h2><span class="text-justify">Choisis dans la liste ci-dessous ce que tu veux travailler:</span>
 							<div class="help" id="gender"><i class="far fa-question-circle"></i><div class="helpMessage Messagegender">Clique sur la liste ci-contre et choisis l'opération que tu veux travailler.</div></div><br>							
+						</div>
+						
+						<div class="panel-body">
+							<!-- !!! DECLARATION DE FORM A SUPPRIMER !!! -->					
+							{!! Form::open(['url' => route('calcul'), 'method'=> 'get']) !!}
+							<!-- !!! -->					
+
+							{!! Form::label('operation', 'Sélectionne une opération - ') !!}<br>
 							@can('operation-cp')
-							{{  Form::select('operation', [0=>'addition (+)', 1=>'soustraction (-)'], Auth::user()->userInfos->subject, ['id' => 'selected_CP' , 'class' => 'selectedOption']) }}<br>														
+							{{  Form::select('operation', [ 0 => 'addition (+)', 2 => 'soustraction (-)'], Auth::user()->userInfos->subject, ['id' => 'selected_CP' , 'class' => 'selectedOption']) }}<br>														
+							
+							<!-- !!! DECLARATION DE FORM A SUPPRIMER !!! -->					
+								<!-- {{  Form::select('operation', [0 => ' -- clic ici --', 1 => 'addition (+)', 2 => 'soustraction (-)'], Auth::user()->userInfos->subject, ['id' => 'selected_CP' , 'class' => 'selectedOption']) }}<br>														
+							<!-- !!! -->					
+							
 							@endcan
 							@can('operation-ce1')
 							{{  Form::select('operation', [0=>'addition (+)', 1=>'soustraction (-)', 2=>'multiplication (x)'], Auth::user()->userInfos->subject, ['class' => 'selectedOption']) }}<br>														
 							@endcan
 							@can('operation-upper-ce2')
 							{{  Form::select('operation', [0=>'addition (+)', 1=>'soustraction (-)', 2=>'multiplication (x)', 3=>'division (÷)'], Auth::user()->userInfos->subject, ['class' => 'selectedOption']) }}<br>														
-							@endcan													
+							@endcan	
+							
+							<!-- !!! DECLARATION DE FORM A SUPPRIMER !!! -->					
+							{!! Form::submit('Envoyer !') !!}
+							{!! Form::close() !!}
+							<!-- !!! -->												
 						</div>
+								
+						<div id="form_CP_1" class="form_CP"><br>
+							{!! Form::open(['url' => route('calcul'), 'method'=> 'get']) !!}
+								{{ Form::select('operation', array('niveau 1' => array( 'poser-addition-niveau-1' => 'poser une addition', 'addition-niveau-1' => 'addition'),'niveau 2' => array( 'poser-addition-niveau-2' => 'poser une addition', 'addition-niveau-2' =>'addition ')) , Auth::user()->userInfos->subject, ['class' => '', 'id' => ''] )  }}
+							{!! Form::submit('Envoyer !') !!}
+							{!! Form::close() !!}
+						</div>																	
+						<div id="form_CP_2" class="form_CP"><br>
+							{!! Form::open(['url' => route('calcul'), 'method'=> 'get']) !!}
+								{{ Form::select('operation', array('niveau 1' => array(0 => 'poser une soustraction', 1 => 'soustraction'),'niveau 2' => array( 3 => 'poser une soustraction', 4 =>'soustraction ')) , Auth::user()->userInfos->subject, ['class' => '', 'id' => ''] )     }}
+							{!! Form::submit('Envoyer !') !!}
+							{!! Form::close() !!}
+						</div>	
 						
-						<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		
-						<script>
-						   $("#selected_CP").change(function () 
-						   {
-								$(".selected2").empty();
-								var option = $("#selected_CP").val();
-								switch (option)
+							<style>
+								.form_CP
 								{
-									case '0':
-										// console.log("OPTION 0");
-								  		$(".selectedOption").after('{!! Form::open(['url' => 'formOperationChoice', 'method'=> 'get']) !!}{!! Form::label('operation', 'Sélectionne une opération - ') !!}<div class="selected2"><br>{{ Form::select('operation', [0=>'poser une addition', 1=>'addition (+)'], Auth::user()->userInfos->subject, ['class' => 'selected2']) }}<br>{!! Form::submit('Envoyer !') !!}{!! Form::close() !!}</div>');																	
-										break;
-									case '1':
-										// console.log("OPTION 1");	
-								  		$(".selectedOption").after('{!! Form::open(['url' => 'formOperationChoice', 'method'=> 'get']) !!}{!! Form::label('operation', 'Sélectionne une opération - ') !!}<div class="selected2"><br>{{ Form::select('operation', [0=>'poser une soustraction', 1=>'soustraction (+)'], Auth::user()->userInfos->subject, ['class' => 'selected2']) }}<br>{!! Form::submit('Envoyer !') !!}{!! Form::close() !!}</div>');																											
-										break;
-									default:
-										console.log("RIEN");
-										$(".selectedOption").after('<div class="selected2"><br>{{ Form::select('operation', [0=>'poser une addition', 1=>'addition (+)'], Auth::user()->userInfos->subject, ['class' => 'selected2']) }}<br>{!! Form::submit('Envoyer !') !!}{!! Form::close() !!}</div>');																	
+									display: none; 	
 								}
-						   });	
-						</script>
+							</style>
+							
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		
+							<script>
+							   $("#selected_CP").change(function () 
+							   {
+									var option = $("#selected_CP").val();
+									switch (option)
+									{
+										case '1':
+											$(".form_CP").hide();
+											$("#form_CP_1").show();
+											$("#form_CP_1 form").submit(function(e) 
+											{
+												e.preventDefault();
+												var $form = $(e.target);
+												document.location.href = e.target.action + '/' + $form.find("select").val();
+											})
+											break;
+										case '2':
+											$(".form_CP").hide();
+											$("#form_CP_2").show();
+											$("#form_CP_2 form").submit(function(e) 
+											{
+												e.preventDefault();
+												var $form = $(e.target);
+												document.location.href = e.target.action + '/' + $form.find("select").val();
+											})
+											break;
+										default:
+									}
+									
+							   });	
+							</script>
 						
-							@if(Session::has('success'))
-								<div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('success') !!}</em></div>
-							@endif	
-							@if(Session::has('error'))
-								<div class="alert alert-danger"><span class="glyphicon glyphicon-ok"></span><em> {!! session('error') !!}</em></div>
-							@endif
+						@if(Session::has('success'))
+							<div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('success') !!}</em></div>
+						@endif	
+						@if(Session::has('error'))
+							<div class="alert alert-danger"><span class="glyphicon glyphicon-ok"></span><em> {!! session('error') !!}</em></div>
+						@endif
 
 					</div>
 				</div>

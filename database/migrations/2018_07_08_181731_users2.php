@@ -16,6 +16,7 @@ class Users2 extends Migration
 		$table->integer( 'maxNumber_user_infos' );
 		$table->integer( 'app_Level_user_infos' );
 		$table->integer( 'difficulty_user_infos' );
+			$table->text('work_user_infos');
 		$table->string( 'displaySettings_user_infos' );
 		$table->string( 'token_user_infos' );	
 		$table->timestamps();         		

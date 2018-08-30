@@ -60,24 +60,25 @@
 		{!! Html::script('js/slider.js') !!}	
 		{!! Html::script('js/infos.js') !!}	
 		{!! Html::script('js/charts.js') !!}	
+		{!! Html::script('js/admin.js') !!}	
 		{!! Html::script('js/video.popup.js') !!}	
 		{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+		<footer>
+			@if (Auth::user())
+				<p>Bonjour <b>{{ Auth::user()->name }} </b> !</p>
+				<p>-</p>
+			@endif
+				<p><i>P5 est une application en ligne pour réviser les fondamentaux du primaire.</i><br><b>Rejoignez-nous !</b></p>
+				<a class="" href="{{ url('http://www.wow-pixel.com') }}">Réalisation du site Internet: wow-pixel.com</a>
+				<p class="" href="{{ url('') }}">Copyright: Marc</p>
+			@if (Auth::user())
+				<br>
+				<a href="{{ url('/logout') }}"></i>Déconnexion</a>
+			@endif
+			@if (Auth::guest())
+				<br>
+				<a class="" href="{{ url('/login') }}">Se connecter</a>
+			@endif
+		</footer>
 	</body>
-	<footer>
-		@if (Auth::user())
-			<p>Bonjour <b>{{ Auth::user()->name }} </b> !</p>
-			<p>-</p>
-		@endif
-			<p><i>P5 est une application en ligne pour réviser les fondamentaux du primaire.</i><br><b>Rejoignez-nous !</b></p>
-			<a class="" href="{{ url('http://www.wow-pixel.com') }}">Réalisation du site Internet: wow-pixel.com</a>
-			<p class="" href="{{ url('') }}">Copyright: Marc</p>
-		@if (Auth::user())
-			<br>
-			<a href="{{ url('/logout') }}"></i>Déconnexion</a>
-		@endif
-		@if (Auth::guest())
-			<br>
-			<a class="" href="{{ url('/login') }}">Se connecter</a>
-		@endif
-	</footer>
 </html>

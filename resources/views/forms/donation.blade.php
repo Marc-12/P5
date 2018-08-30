@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('templates.app')
 
 @section('content')
     <div class="row">
@@ -9,26 +9,36 @@
 			<div id="maClasseContent">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="panel panel-default">
-						<div class="panel-heading"><h2 class="text-center">Faire un don</h2><p class="text-justify">Soutenez le projet </br></div>
-
+						<div class="panel-heading">
+							<h2 class="text-center">Faire un don</h2><p class="text-justify">Soutenez le projet </br>
+						</div>
 						<div class="panel-body">
-							{!! Form::open(['url' => 'formContact']) !!}
-									{!! Form::label('object', 'Objet du message: ' ) !!}<div class="asterix"> * </div><br>
-									{{ Form::select('object', ['Je suis membre et j\'ai une question','Rapporter un dysfonctionnement de l\'application','Proposer une amélioration de l\'application', 'Travailler ensemble','Autre']) }}<br>									
-									{!! Form::label('firstname', 'Mon prénom: ' ) !!}<div class="asterix"> * </div><br>
-									{!! Form::text('firstname') !!}							
-									<div class="form-group {!! $errors->has('firstname') ? 'has-error' : '' !!}">{!! $errors->first('firstname', '<small class="help-block">:message</small>') !!}</div><br>
-									{!! Form::label('lastname', 'Mon nom: ') !!}<br>
-									{!! Form::text('lastname') !!}<br>						
-									{!! Form::label('message', 'Mon message: ' ) !!}<div class="asterix"> * </div><br>
-									{!! Form::textarea('message') !!}<br>
-									<div class="form-group {!! $errors->has('message') ? 'has-error' : '' !!}">{!! $errors->first('message', '<small class="help-block">:message</small>') !!}</div><br><br>							
-									<label><i><div class="asterix">* Champs requis</div></i><br></br>	
-									{!! Form::submit('Envoyer !') !!}
-								{!! Form::close() !!}
-								
-													
-								
+							<form action="userDonationCheckout" method="POST">
+							{{ csrf_field() }}
+							  <script
+								src="https://checkout.stripe.com/checkout.js" class="stripe-button" id="button"
+								data-key="pk_test_nrcFDU0NTdcWjFYl4qMJOuOR"
+								data-amount="50"
+								data-name="Projet 5"
+								data-description="Soutenir le projet"
+								data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+								data-locale="auto"
+								data-zip-code="true"
+								data-allow-remember-me	= "false"
+								data-currency="eur">
+			
+								// Preventing Checkout from being blocked
+								document.getElementById("button").addEventListener("click", function() 
+								{
+								  handler.open({
+									image: '/square-image.png',
+									name: 'Demo Site',
+									description: '2 widgets',
+									amount: 2000
+								  });
+								});
+							  </script>
+							</form>
 						</div>
 					</div>
 				</div>

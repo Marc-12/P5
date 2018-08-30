@@ -100,9 +100,12 @@ class WorkChoice extends Controller
 			$this->getOperationNumbers (); 
 		}
    }
+   // public function operationPage(Request $request, $operation)
    public function operationPage(Request $request)
    {
 	     // dd($request->all());
+	     // dd($operation);
+
 	     // dd(old('hiddenTopNumber'));
 		 // dd(session()->all());
 		 // PART #1 du script pour récupérer les 2 nombres de l'opération 
@@ -110,7 +113,10 @@ class WorkChoice extends Controller
 		 $top =  $request->old('hiddenTopNumber');
 		 $bottom = $request->old('hiddenBottomNumber');
 		 
+		 
+		 
 	  if($request->input('operation') == "0")
+	  // if($operation == "addition")
 	  {//ADDITION
 			// PART #2 pour renvoyer les bonnes valeurs en cas de VALIDATION FORM REQUEST
 			if(empty($top) && empty($bottom))
@@ -134,7 +140,7 @@ class WorkChoice extends Controller
 				$topNumber = $nb2;
 				$bottomNumber = $nb1;
 			}	
-		   return view('forms/addition', ['topNumber' => $topNumber, 'bottomNumber' => $bottomNumber]);
+		   return view('works/maths-calcul-pose/addition', ['topNumber' => $topNumber, 'bottomNumber' => $bottomNumber]);
 	   }
 	   else if($request->input('operation') == "1")
 	   {//SOUSTRACTION
@@ -162,7 +168,7 @@ class WorkChoice extends Controller
 				$topNumber = $nb2;
 				$bottomNumber = $nb1;
 			}	
-		   return view('forms/soustraction', ['topNumber' => $topNumber, 'bottomNumber' => $bottomNumber]);
+		   return view('works/maths-calcul-pose/soustraction', ['topNumber' => $topNumber, 'bottomNumber' => $bottomNumber]);
 	   }
 	   else if($request->input('operation') == "2")
 	   {//MULTIPLICATION
@@ -187,7 +193,7 @@ class WorkChoice extends Controller
 				$topNumber = $nb1;
 				$bottomNumber = $nb3;
 			}	
-		   return view('forms/multiplication', ['topNumber' => $topNumber, 'bottomNumber' => $bottomNumber]);
+		   return view('works/maths-calcul-pose/multiplication', ['topNumber' => $topNumber, 'bottomNumber' => $bottomNumber]);
 	   }
 	   else if($request->input('operation') == "3")
 	   {//DIVISION
@@ -212,7 +218,7 @@ class WorkChoice extends Controller
 				$topNumber = $nb4;
 				$bottomNumber = $nb3;
 			}	
-		   return view('forms/divisionSansReste', ['topNumber' => $topNumber, 'bottomNumber' => $bottomNumber]);
+		   return view('works/maths-calcul-pose/divisionSansReste', ['topNumber' => $topNumber, 'bottomNumber' => $bottomNumber]);
 	   }	   
    }
    public function additionCheckResult (OperationFormRequest $request)

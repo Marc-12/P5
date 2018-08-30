@@ -16,8 +16,4 @@ class WelcomeController extends Controller
 	{
 		return view('forms/donation');
 	}  
-	// public function test()
-	// {
-		// return view('vue1');
-	// }  
 }

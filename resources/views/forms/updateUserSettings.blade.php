@@ -1,10 +1,8 @@
-@extends('layouts.app')
+@extends('templates.app')
 @section('content')
     <div class="row">
         <div class="col-lg-12 maclasse">
 			@include('templates/iconsMenu')
-			
-			
 			<div id="maClasseContent">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="panel panel-default">
@@ -33,7 +31,6 @@
 									{{  Form::select('difficulty', [0=>'Facile',1=>'Normal',2=>'Difficile'], Auth::user()->userInfos->difficulty_user_infos) }}<br><br><br>	
 									{!! Form::submit('Envoyer !') !!}
 							{!! Form::close() !!}
-						
 						</div>
 					</div>
 				</div>

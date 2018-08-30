@@ -14,7 +14,7 @@ class UserContactRequest extends Request
     {
         return [
             'firstname' => 'required|min:3|max:20|alpha',
-			'message' => 'required|max:255',
+			'message' => 'required|max:300',
         ];
     }
 	public function messages()
@@ -25,7 +25,7 @@ class UserContactRequest extends Request
 			'firstname.max' => 'Veuillez indiquer un prénom de moins de 20 lettres.',
 			'firstname.alpha' => 'Veuillez écrire votre prénom en toutes lettres (sans chiffre-s).',
 			'message.required' => 'Veuillez écrire un message.',
-			'message.max' => 'Votre message doit comporter moins de 250 caractères.',
+			'message.max' => 'Votre message doit comporter moins de 300 caractères.',
 		];
 	}
 }

@@ -1,11 +1,8 @@
-@extends('layouts.app')
-
+@extends('templates.app')
 @section('content')
     <div class="row">
         <div class="col-lg-12 maclasse">
 			@include('templates/iconsMenu')
-	
-	
 			<div id="maClasseContent">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="panel panel-default">

@@ -1,4 +1,17 @@
 
+/* MESSAGES FLASH admin + */
+.flash-Div
+{
+	width: 100%;
+	margin: 0px; 
+	padding: 0px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.flash-Div div
+{
+	margin-bottom: 0px;}
 /* -------------------> NAV bar <---------------------*/
 #app-layout li a 
 {

@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('templates.app')
 @section('content')
 <!--<div class="container">-->
     <div class="row">
@@ -20,6 +19,11 @@
 				<p>P5 est la première plateforme en ligne pour réviser les maths et le français du primaire à son rythme !</p><a class="bordered button" href="#infos">Plus d'infos</a></div>
 			</section>
 		</div>
+		@if(Session::has('welcomePageFlash'))
+			<div class="flash-Div">
+				<div class="alert alert-success col-lg-offset-4 col-lg-4 col-xs-offset-2 col-xs-8" id="alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('welcomePageFlash') !!}</em></div>
+			</div>
+		@endif
 		<div class="IndexVideo">
 			<iframe width="" height="" src="https://www.youtube.com/embed/qTLG3Wg4tZQ?start=85" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		</div>

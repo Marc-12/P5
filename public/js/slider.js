@@ -15,7 +15,6 @@ $(document).ready(function()
 		},
 		responsiveSlider: function ()
 		{
-			// resize ();
 			$(window).resize(function()
 			{
 			  resize ();

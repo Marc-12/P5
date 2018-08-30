@@ -27,6 +27,7 @@ class UserController extends Controller
 {
     protected $userRepository;
     protected $nbrPerPage = 4;
+	protected $dates = ['created_at'];
 
 
     public function __construct(UserRepository $userRepository)
@@ -98,8 +99,8 @@ class UserController extends Controller
 	public function contactForm(UserContactRequest $request)
 	{		
 		Contact::insert(['id_User_Contacts' => $request->user()->id, 'objet_User_Contacts' => $request->input('object'), 'prenom_User_Contacts' => $request->input('firstname'),
-		'nom_User_Contacts' => $request->input('lastname'), 'message_User_Contacts' => $request->input('message')]);
-		$request->session()->flash('form', 'Votre message est pris en compte.<br>Notre équipe vous répondra dans les plus brefs délais.');			
+		'nom_User_Contacts' => $request->input('lastname'), 'message_User_Contacts' => $request->input('message'), 'created_at' => date("Y-m-d")]);
+		$request->session()->flash('form', 'Votre message est pris en compte.<br>Notre équipe vous répondra dans les plus brefs délais.');
 		return redirect()->route('maclasse');
 	}
 	//

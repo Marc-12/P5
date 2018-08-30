@@ -12,14 +12,15 @@ class UserContact extends Migration
 			$table->increments( 'id' );
 			$table->string( 'id_user_contacts' );
 			$table->string('objet_user_contacts');
+			$table->tinyInteger('state_user_contacts');
 			$table->string('prenom_user_contacts');
 			$table->string('nom_user_contacts');
-			$table->string('message_user_contacts');
+			$table->text('message_user_contacts');
 			$table->timestamps();	
 		});
     }
     public function down()
     {
-        		Schema::drop('user_contacts');
+        	Schema::drop('user_contacts');
     }	
 }

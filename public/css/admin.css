@@ -1,0 +1,94 @@
+/* ADMIN PAGE*/
+.adminMailBox .adminBox
+{
+	
+	display: flex; 
+	flex-direction: column;
+	justify-content: cente;
+	align-items: center;
+}	
+.adminMailBox .panel a
+{
+	text-decoration: none;
+	color: black;
+}
+.adminMailBox .adminBox i
+{
+	color: white;
+	font-size: 39px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+#p-newMail
+{
+	color: green;
+}
+
+/* MAIL PAGE */
+.greenArrow
+{
+	color: green;
+}
+.redArrow
+{
+	color: red;
+}
+.mailUsers_Message .mailUsers_Buttons
+{
+	display: none;
+}
+.mailUsers
+{
+	border: 1px solid re; 
+	width: 100%; 
+		height: 65px;
+	background-color: white;
+	margin-bottom: 5px;
+	display: flex; 
+	flex-direction: row; 
+	padding: 2%;
+	overflow: hidden;
+}
+.mailUsers_Name
+{
+	width: 20%;
+	border: 1px solid gree;
+	display: flex; 
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.mailUsers_Date
+{
+	width: 20%;
+	border: 1px solid gree;
+	overflow: hidden;
+	font-size: 12x;
+	display: flex; 
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.mailUsers_Message
+{
+	width: 60%;
+	height: 100%;
+	border: 1px solid gree;
+	overflow: hidden;
+}
+.mailUsers_Control
+{
+	width: 10%;
+	border: 1px solid gree;
+	display: flex; 
+	flex-direction: column; 
+	justify-content: center; 
+	align-items: center;
+}
+.mailUsers_Message_p
+{
+	border: 1px solid blu;
+	height: 90%;
+	margin: 0px;
+	text-align: justify;
+}
